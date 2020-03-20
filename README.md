@@ -1,4 +1,4 @@
-# **PROJECT CLASSIFY**
+# **Project CLASSIFY**
 
 This project aims to solve and improve the accuracy of following tasks:
 
