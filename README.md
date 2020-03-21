@@ -5,6 +5,8 @@ This project aims to solve and improve the accuracy of following tasks:
 - Programming Language Classification
 - File Purpose Classification
 
+Various techniques were explored. The method proposed below is lightweight, yet accurate.
+
 [Idea Page](https://github.com/nexB/aboutcode/wiki/Project-Ideas-Improve-File-Classification)
 # Basic Information About Me
 
