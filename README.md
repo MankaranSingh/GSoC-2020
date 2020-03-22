@@ -24,7 +24,7 @@ Various techniques were explored. The method proposed below is lightweight, yet 
 
 **Phone:** (+91) 9872901791
 
-**Postal Address:** 2206, Krishna Nagar, Civil Lines, Ludhiana, Punjab,, India
+**Postal Address:** 2206, Krishna Nagar, Civil Lines, Ludhiana, Punjab, India
 
 **Timezone:** Indian Standard Time (UTC +5:30)
 
@@ -75,6 +75,7 @@ Various techniques were explored. The method proposed below is lightweight, yet 
  ## Programming Language Classification Task:
 
 **Note: All thing things written below have been verified and performed in the following [notebook](https://github.com/MankaranSingh/GSoC-2020/blob/master/Programming%20Language%20classification/notebooks/All%20Models.ipynb):**
+*The Dataset used in the notebook is not the one specified here*
 
 Machine learning is replacing conventional methods of solving a specific problem but one cannot 'just replace' the conventional methods with some fancy machine learning algorithms the reason being:
  
@@ -235,7 +236,7 @@ def extract_features_from_files(paths):
         test_count_in_neighbouring_filenames.append(count)
 ```
 
-*Note: This is only for 'test' file classification, features for other types can be extracted i a similar way.*
+*Note: This is only for 'test' file classification, features for other types can be extracted in a similar way.*
 
 My solution is to extract these features from each file and run them through a model for classification.
 
@@ -346,3 +347,9 @@ I will keep on working upon improving the contributions that I will make through
 
 - ## Some final thoughts:
 	I am confident that this project would definitely be a success since i have done the validation of my ideas in the given notebooks - [Programming Language Classification](https://github.com/MankaranSingh/GSoC-2020/blob/master/Programming%20Language%20classification/notebooks/All%20Models.ipynb), [File Purpose Classification](https://github.com/MankaranSingh/GSoC-2020/blob/master/File%20purpose%20classification/Some%20Experiments%20with%20SVM%20classifier%20.ipynb). Other than that, Mr. [@romanofoti](https://github.com/romanofoti) generously offered to guide me during the project. I would be taking guidance and insights from him throughout the project so that no stone gets left unturned. 
+	
+- ## Try The Notebooks on Colab:
+	- [Programming Language Classification](https://drive.google.com/file/d/1lS5OE6ZJFEiDmOAPI8aYcPAogYGADB4U/view?usp=sharing)
+	- [File Purpose Classification]( https://drive.google.com/file/d/1D2nAyGfOZnrkGAa1iNb4abkDJt1gZG7b/view?usp=sharing)
+	
+	
