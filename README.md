@@ -1,3 +1,4 @@
+
 # **Project CLASSIFY**
 
 This project aims to solve and improve the accuracy of following tasks:
@@ -259,10 +260,31 @@ The advantage of Handcrafting rules is:
  Both approaches work, but the final conclusion can only be made after feedback from end-user and discussion with mentors. But nonetheless, both approaches would do the job. 
 
  We may also use a combination of both approaches like:
+ 
+ - Train a random forest model  
+ -  Extract the feature importances and the if-else decisions 
+ - Use them to handcraft rules
 
- Train a random forest model -> Extract the feature importances and the if-else decisions -> Use them to handcraft rules.
+For example, see the below image:
 
-**Tech Stack:**
+![https://raw.githubusercontent.com/MankaranSingh/GSoC-2020/master/File%20purpose%20classification/feature_importance.png](https://raw.githubusercontent.com/MankaranSingh/GSoC-2020/master/File%20purpose%20classification/feature_importance.png)
+ 
+ We can see, how important a particular feature is from modelling the current dummy data-set. Great insights, we can definitely keep these in mind while handcrafting rules. 
+ 
+## Dealing With False Positives:
+
+False positives means that the model reports a specific file as something which it isn't, for example:
+
+- Predicting a non test file as a test file
+- Predicting a Matlab file as a JS/Python file
+- And other similar cases
+
+It would be a better thing if the model reports *'Can't Identify'* rather than something wrong. Currently, methods like pygments do not provide us with any functionality like this.
+This can be achieved by increasing the sensitivity of our model and making it more 'precise'. When a model is used to predict something, sci-kit learn provides us with `predict_proba` and `decison_scores` methods which returns the probability of the given sample for all classes it belongs to. The class with highest probability is selected.
+What we can do is to set a **thresh-hold** value. So, a prediction would only be considered if the model returns a probability that is at-least greater than the thresh-hold value. 
+Therefore, we would only consider a prediction if the model is fairly confident about it, thus avoiding false positives. 
+
+## Tech Stack:
 
 - Python
 - Machine Learning Libraries: Keras, XGBoost, Scikit-Learn (Final library would be selected based upon the best performing model)
