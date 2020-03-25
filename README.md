@@ -265,7 +265,7 @@ The advantage of Handcrafting rules is:
  -  Extract the feature importances and the if-else decisions 
  - Use them to handcraft rules
 
-For example, see the below image:
+For example, see the below image, it represents how important a particular feature is:
 
 ![https://raw.githubusercontent.com/MankaranSingh/GSoC-2020/master/File%20purpose%20classification/feature_importance.png](https://raw.githubusercontent.com/MankaranSingh/GSoC-2020/master/File%20purpose%20classification/feature_importance.png)
  
@@ -300,34 +300,41 @@ I'd focus on collecting the dataset required for training the model by scraping 
  - **Community Bonding :**
 Getting acquainted with the code base and the procedure that needs to be followed to submit code and get it reviewed. Discussing with the team on what exactly needs to be the problem statement (minute details, like kind of dataset we want to use, what parameters should be user choices, like parameters such as for training a newer model, adding a new programming language to the model, specifying a custom model prior to the scan, etc).
 
-- **Week 1**
+- **Week 1:**
 Understand the relevant parts of the code base and try to figure out how the final product should look like, how these classifiers would be integrated into the existing workflow and what standards we need to follow,
 
-- **Week 2**
+- **Week 2:**
 This week would be spent upon analyzing and collection of data from the internet. Data cleaning would also be done. Finally, a fully cleaned and structured data-set, that is ready to be fed to machine learning algorithms would be prepared by the end of this week.
 
-- **Week 3 - 4**
+- **Week 3 - 4:**
 This week would be spent on training various types of models. A full report upon the performance of all the models (like inference times, model size, accuracy, ease of integration, etc) would be documented for future reference.
 
-- **Week 5 - 6**
+- **Week 5 - 6:**
 Once the final models are selected, this week would be spent upon integration of these classifiers into the existing workflow.
 
-- **Week 7**
+- **Week 7:**
 After the model integration, this week would be spent on writing various test cases based upon all the features that were integrated into the codebase in previous weeks.
 
-- **Week 8 - 10**
+- **Week 8 - 10:**
 Take feedback from the community and iterate on the designs and improvise on use cases. Ensure code quality by adding more test cases
 
-- **Week 10 - 11**
+- **Week 10 - 11:**
 Streamlining and standardizing  the ways of training our own custom model if needed
 
-- **Week 12**
+- **Week 12:**
 Documentation
 
 - **Week 13** 
 Spare week in case of some work getting delayed, in case of any emergency or otherwise.
-- **Post GSoC**
-I will keep on working upon improving the contributions that I will make throughout the project. I will stay as an active member of the community.  
+- **Post GSoC:**
+ In my opinion, there are two types of statements:
+	
+	- The logical statement “if A, then B” can be coded easily in any programming language
+	- The probabilistic statement “if A, then probably B” isn’t nearly
+as straightforward. 
+
+	The AboutCode organisation has to deal with a large number of Type II statements, which is a difficult thing and I respect that. This project also belongs to type II and some iterations may be required to get things right. 
+	I will keep on working upon improving the contributions that I will make throughout the project and  will stay as an active member of the community.
 
 # About Me:
 - ## Technical Knowledge And Relevant Skills:
@@ -374,4 +381,7 @@ I will keep on working upon improving the contributions that I will make through
 	- [Programming Language Classification](https://drive.google.com/file/d/1lS5OE6ZJFEiDmOAPI8aYcPAogYGADB4U/view?usp=sharing)
 	- [File Purpose Classification]( https://drive.google.com/file/d/1D2nAyGfOZnrkGAa1iNb4abkDJt1gZG7b/view?usp=sharing)
 	
-	
+- ## References:
+	- [https://github.blog/2019-07-02-c-or-java-typescript...](https://github.blog/2019-07-02-c-or-java-typescript-or-javascript-machine-learning-based-classification-of-programming-languages/)
+	- [https://medium.com/machine-learning-at-petiteprogrammer/..](https://medium.com/machine-learning-at-petiteprogrammer/detecting-the-programming-language-of-source-code-snippets-using-machine-learning-and-neural-e275ca4ce93e)
+	- [https://link.springer.com/chapter/10...](https://link.springer.com/chapter/10.1007/978-3-319-08979-9_39)
