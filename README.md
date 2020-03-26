@@ -96,7 +96,7 @@ From my research, i have found that using machine learning for this use case is 
 GitHub is moving from it's existing solution 'Linguist' to a machine learning based solution named as 'OctoLingua' - [source](https://github.blog/2019-07-02-c-or-java-typescript-or-javascript-machine-learning-based-classification-of-programming-languages/)
 The following results were obtained using OctoLingua. We can see that OctoLingua maintains a good performance under various conditions, suggesting that the model learns primarily from the vocabulary of the code, rather than from meta information (i.e. file extension), whereas Linguist fails as soon as the information on file extensions is altered.
 
-![Figure 1](https://i0.wp.com/user-images.githubusercontent.com/7935808/60456070-7abcd800-9bf5-11e9-8bd8-18eed09b3612.png?ssl=1)
+<img src="https://i0.wp.com/user-images.githubusercontent.com/7935808/60456070-7abcd800-9bf5-11e9-8bd8-18eed09b3612.png" alt="table" width="500"/>
 
 The above results seem very impressive. But are they worth it considering the impact on performance and integration into the scancode workflow ?
 
@@ -138,12 +138,19 @@ After that, we count the occurrence of each token and apply the following filter
 ```python
 min_occurane = 5  # Min number of times a word should be present in the dataset.
 
-tokens = [k for k,c in vocab.items() if c >= min_occurane] # Remove the tokens which appear less than 5 times in the data-set since they are not much informative
+tokens = [k for k,c in vocab.items() if c >= min_occurane] 
+# Remove the tokens which appear less 
+# than 5 times in the data-set since they are not much informative
 
-forbidden = ['copyright', 'ibm', 'corp', 'licensed', 'you', 'apache', 'license', 'licenses', 'org', 'compliance']  # remove some tokens that are present in the 'licence/copyright text' above the code.
+forbidden = ['copyright', 'ibm', 'corp', 'licensed', 'you', 'apache',
+ 			'license', 'licenses', 'org', 'compliance']  
+
+# remove some tokens that are present in the 'licence/copyright text' above the code.
+
 tokens = [word for word in tokens if word not in forbidden]
 
-tokens = [word for word in tokens if len(word) > 1] # remove single letter words like 'a', 'b', '1', 'e', etc.
+tokens = [word for word in tokens if len(word) > 1] 
+# remove single letter words like 'a', 'b', '1', 'e', etc.
 
 tokens = [word for word in tokens if not word.isnumeric()] # remove numbers 
 ```
@@ -267,7 +274,7 @@ The advantage of Handcrafting rules is:
 
 For example, see the below image, it represents how important a particular feature is:
 
-![https://raw.githubusercontent.com/MankaranSingh/GSoC-2020/master/File%20purpose%20classification/feature_importance.png](https://raw.githubusercontent.com/MankaranSingh/GSoC-2020/master/File%20purpose%20classification/feature_importance.png)
+<img src="https://raw.githubusercontent.com/MankaranSingh/GSoC-2020/master/File%20purpose%20classification/feature_importance.png" alt="drawing" width="590"/>
  
  We can see, how important a particular feature is from modelling the current dummy data-set. Great insights, we can definitely keep these in mind while handcrafting rules. 
  
@@ -298,7 +305,7 @@ Therefore, we would only consider a prediction if the model is fairly confident 
 I'd focus on collecting the dataset required for training the model by scraping data from the internet. I'd also have make sure that the collected data is well balanced by analysing it though various data analytic techniques and would have to clean the dataset as required. This also makes my task easier in those 12 weeks and helps me concentrate on shipping professional code.
 
  - **Community Bonding :**
-Getting acquainted with the code base and the procedure that needs to be followed to submit code and get it reviewed. Discussing with the team on what exactly needs to be the problem statement (minute details, like kind of dataset we want to use, what parameters should be user choices, like parameters such as for training a newer model, adding a new programming language to the model, specifying a custom model prior to the scan, etc).
+Getting acquainted with the code base and the procedure that needs to be followed to submit code and get it reviewed. Discussing with the team on what exactly needs to be the problem statement (minute details, like kind of dataset we want to use, what parameters should be user choices, like parameters such as for training a newer model, adding a new programming language to the model, specifying a custom model prior to the scan, etc). Other than this, I have my final 2nd year University Exams from May 11 - May 23. But II'l try my best to give as much attention as possible to the community binding period. 
 
 - **Week 1:**
 Understand the relevant parts of the code base and try to figure out how the final product should look like, how these classifiers would be integrated into the existing workflow and what standards we need to follow,
@@ -372,7 +379,7 @@ as straightforward.
 	  Other than that, here is a small [contribution](https://github.com/mozilla/DeepSpeech-examples/pull/15) to the 	Mozilla DeepSpeech Project
 	  
 - ## Do you plan to have any other commitments during GSoC that may affect your work?
-	I do not have any commitments that would affect my work in any way. I have not applied for any other internships/ part-time / full-time jobs. I have 24*7 internet connectivity, as well as access to personal computer and would be staying at home. I have no trips/vacations planned irrespective of GSoC or not. 
+	I do not have any commitments that would affect my work in any way. I have not applied for any other internships/ part-time / full-time jobs. I have 24x7 internet connectivity, as well as access to personal computer and would be staying at home. I have no trips/vacations planned irrespective of GSoC or not. 
 
 - ## Some final thoughts:
 	I am confident that this project would definitely be a success since i have done the validation of my ideas in the given notebooks - [Programming Language Classification](https://github.com/MankaranSingh/GSoC-2020/blob/master/Programming%20Language%20classification/notebooks/All%20Models.ipynb), [File Purpose Classification](https://github.com/MankaranSingh/GSoC-2020/blob/master/File%20purpose%20classification/Some%20Experiments%20with%20SVM%20classifier%20.ipynb). Other than that, Mr. [@romanofoti](https://github.com/romanofoti) generously offered to guide me during the project. I would be taking guidance and insights from him throughout the project so that no stone gets left unturned. 
