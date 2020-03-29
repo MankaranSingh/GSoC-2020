@@ -1,4 +1,3 @@
-
 # **Project CLASSIFY**
 
 This project aims to solve and improve the accuracy of following tasks:
@@ -184,9 +183,11 @@ The following results were obtained:
 We can clearly see that machine learning is clearly a better option over pygments.
 
 ### Model Selection:
-*I think we should avoid using deep learning because of the following reason:*
+*I think we should avoid using deep learning (OctoLingua, tensorflow based models, etc.) because of the following reason:*
 
 Here, the deep learning model, XGboost + TF-IDF and the Random Forest + TF-IDF models perform almost similar. If we use deep learning models, we would have to add tensorflow and keras as a dependency.The Tensorflow package is well over 500 MB and is an overkill for this project as a dependency in my oppinion. On the other hand, the conventional models require only sci-kitlearn and xgboost library which are far more lightweight and easy to install on all operating systems. The deep learning model may outperform other models given huge amount of data. But our tasks of programming anguage classification dosen't seem to be too complex and is fairly modeled by these models.
+
+Therefore, it is necessary to create a classifier that is tailored to the scancode's needs i.e. being lightweight, more precise, etc. Existing projects do not provide any flexibility for this.
 
 ## File Purpose Classification Task:
 The files can be classified into the following categories:
@@ -291,13 +292,29 @@ This can be achieved by increasing the sensitivity of our model and making it mo
 What we can do is to set a **thresh-hold** value. So, a prediction would only be considered if the model returns a probability that is at-least greater than the thresh-hold value. 
 Therefore, we would only consider a prediction if the model is fairly confident about it, thus avoiding false positives. 
 
+## Dependencies:
+
+- scikit-learn (4.5 MB)
+- scipy (27 MB)
+- numpy (10 MB) 
+
+All these packages are very actively maintained and all of them are easily and commonly installed via a single-shot command *'pip install sklearn'*. Python 3.x and 2.x are fully supported. 
+
+*Avoiding tensorflow/keras since they are huge in size and not very easy to install. This will definitely not fit well for the scancode package.*
+
+*If we still don't want to use any of the above mentioned dependencies, I can (and have) implement the above mentioned algorithms in pure python. see [this](https://towardsdatascience.com/tf-idf-for-document-ranking-from-scratch-in-python-on-real-world-dataset-796d339a4089) and [this](https://machinelearningmastery.com/implement-random-forest-scratch-python/)*
+
 ## Tech Stack:
 
 - Python
-- Machine Learning Libraries: Keras, XGBoost, Scikit-Learn (Final library would be selected based upon the best performing model)
+- Machine Learning Libraries: XGBoost, Scikit-Learn (Final library would be selected based upon the best performing model)
 - Beautiful Soup: For scraping data from web
 
-
+## Deliverables:
+- Fully clean and ready to use dataset for both the tasks.
+- Well documented performance of various machine learning models for future reference.
+- Best classifiers models for both the tasks.
+- Integration of the classifiers into the codebase as plugins.
 
 # Timeline
 
@@ -311,7 +328,7 @@ Getting acquainted with the code base and the procedure that needs to be followe
 Understand the relevant parts of the code base and try to figure out how the final product should look like, how these classifiers would be integrated into the existing workflow and what standards we need to follow,
 
 - **Week 2:**
-This week would be spent upon analyzing and collection of data from the internet. Data cleaning would also be done. Finally, a fully cleaned and structured data-set, that is ready to be fed to machine learning algorithms would be prepared by the end of this week.
+This week would be spent upon analyzing and collection of data from the internet. Data cleaning would also be done. Finally, a fully cleaned and structured data-set, for both programming language as well as file classification task that is ready to be fed to machine learning algorithms would be prepared by the end of this week.
 
 - **Week 3 - 4:**
 This week would be spent on training various types of models. A full report upon the performance of all the models (like inference times, model size, accuracy, ease of integration, etc) would be documented for future reference.
@@ -366,6 +383,7 @@ as straightforward.
 	Below are the links to the issues/pull requests that I have worked upon:
 	
 	- [https://github.com/nexB/scancode-toolkit/pull/1942](https://github.com/nexB/scancode-toolkit/pull/1942)
+	- [https://github.com/nexB/scancode-toolkit/pull/1985](https://github.com/nexB/scancode-toolkit/pull/1985)
 	- [https://github.com/nexB/scancode-toolkit/issues/1937](https://github.com/nexB/scancode-toolkit/issues/1937)
 	- [https://github.com/nexB/scancode-toolkit/issues/1979](https://github.com/nexB/scancode-toolkit/issues/1979)
 	- [https://github.com/nexB/scancode-toolkit/issues/1947](https://github.com/nexB/scancode-toolkit/issues/1947)  
