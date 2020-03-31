@@ -251,7 +251,7 @@ def extract_features_from_files(paths):
 
 My solution is to extract these features from each file and run them through a model for classification.
 
-**The results can be found in the following [Notebook](https://github.com/MankaranSingh/GSoC-2020/blob/master/File%20purpose%20classification/Some%20Experiments%20with%20SVM%20classifier%20.ipynb)**
+**The results can be found in the following [Notebook](https://github.com/MankaranSingh/GSoC-2020/blob/master/File%20purpose%20classification/Some%20Experiments%20with%20SVM%20and%20rf%20classifier%20.ipynb)**
 
 The following features were extracted extracted from each file and were used to train a simple SVM classifier to perform a binary classification of *'test vs non test'* files. 
 
@@ -326,7 +326,7 @@ All these packages are very actively maintained and all of them are easily and c
 I'd focus on collecting the dataset required for training the model by scraping data from the internet. I'd also have make sure that the collected data is well balanced by analysing it though various data analytic techniques and would have to clean the dataset as required. This also makes my task easier in those 12 weeks and helps me concentrate on shipping professional code.
 
  - **Community Bonding :**
-Getting acquainted with the code base and the procedure that needs to be followed to submit code and get it reviewed. Discussing with the team on what exactly needs to be the problem statement (minute details, like kind of dataset we want to use, what parameters should be user choices, like parameters such as for training a newer model, adding a new programming language to the model, specifying a custom model prior to the scan, etc). Other than this, I have my final 2nd year University Exams from May 11 - May 23. But II'l try my best to give as much attention as possible to the community binding period. 
+Getting acquainted with the code base and the procedure that needs to be followed to submit code and get it reviewed. Discussing with the team on what exactly needs to be the problem statement (minute details, like kind of dataset we want to use, what parameters should be user choices, like parameters such as for training a newer model, adding a new programming language to the model, specifying a custom model prior to the scan, etc). Other than this, I have my final 2nd year University Exams from May 11 - May 23. But II'l try my best to give as much attention as possible to the community bonding period. 
 
 - **Week 1:**
 Understand the relevant parts of the code base and try to figure out how the final product should look like, how these classifiers would be integrated into the existing workflow and what standards we need to follow,
@@ -361,7 +361,7 @@ Spare week in case of some work getting delayed, in case of any emergency or oth
 	- The probabilistic statement “if A, then probably B” isn’t nearly
 as straightforward. 
 
-	The AboutCode organisation has to deal with a large number of Type II statements, which is a difficult thing and I respect that. This project also belongs to type II and some iterations may be required to get things right. 
+	The AboutCode organisation has to deal with a large number of Type II statements, which is a difficult thing and I respect that. This project also belongs to Type II and some iterations may be required to get things right. 
 	I will keep on working upon improving the contributions that I will make throughout the project and  will stay as an active member of the community.
 
 # About Me:
