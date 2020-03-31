@@ -1,4 +1,6 @@
+
 # **Project CLASSIFY**
+**Mentor - [Philippe Ombredanne](https://github.com/pombredanne)**
 
 This project aims to solve and improve the accuracy of following tasks:
 
@@ -67,15 +69,14 @@ Various techniques were explored. The method proposed below is lightweight, yet 
 	 
 	 This is important because, for example, the license of core code may be more 			important than the license of test code, example code, etc. Classifying the files into these help us to prioritize and emphasize on the licenses of certain categories. This is similar to the concept of "facets" from the Clearly Defined project. 
 	 Different techniques to accomplish this task (including machine learning) would be discussed below.
-
-
+	 
 
 # Technical Details
 
  ## Programming Language Classification Task:
 
 **Note: All thing things written below have been verified and performed in the following [notebook](https://github.com/MankaranSingh/GSoC-2020/blob/master/Programming%20Language%20classification/notebooks/All%20Models.ipynb):**
-*The Dataset used in the notebook is not the one specified here*
+*The Dataset used in the notebook is not the one specified here.*
 
 Machine learning is replacing conventional methods of solving a specific problem but one cannot 'just replace' the conventional methods with some fancy machine learning algorithms the reason being:
  
@@ -97,9 +98,7 @@ The following results were obtained using OctoLingua. We can see that OctoLingua
 
 <img src="https://i0.wp.com/user-images.githubusercontent.com/7935808/60456070-7abcd800-9bf5-11e9-8bd8-18eed09b3612.png" alt="table" width="500"/>
 
-The above results seem very impressive. But are they worth it considering the impact on performance and integration into the scancode workflow ?
-
-The final conclusions  can only be made after training many models of different architectures on the data-set of text files of programming languages and choose the one which have the *best combination of model size, computation requirement, inference time, etc.*
+The above results seem very impressive. But OctoLigua uses tensorflow/keras and these libraries are too heavy, large in size and difficult to install. We need a similar lightweight classifier (Random Forest, SVM, Naive Bayes, etc) that is both accurate and lightweight.
 
 ### Data-set:
 For programming language classification task, the [Rosetta Code](http://rosettacode.org/wiki/Rosetta_Code) website is a great place to obtain the data-set. This contains huge amounts of code written in various programming languages (way more than what we need). The quality of data is high. 
@@ -159,7 +158,7 @@ Now, we need to vectorize the tokens, there are certain techniques like Doc2Vec,
 I chose **TF-IDF** since it is lightweight and performs well over *domain specific tasks*.
 *TF-IDF is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus.*
 
-Finally, along with text, the file extension would also be fed into the model for training but with a twist - 50 % of the samples would contain incorrect/random extensions so that the model learns more from the vocabulary rather than meta-data as explained in the OctoLingua blog post. This would make the model almost 100 % accurate in real life setting !
+Finally, along with text, the file extension would also be fed into the model for training but with a twist - 50 % of the samples would contain incorrect/random extensions so that the model learns more from the vocabulary rather than meta-data as explained in the OctoLingua blog post. This would make the model very accurate in real life setting ! *(The models in notebook were trained without any file extensions)*
 
 *This concludes the pre-processing steps.*
 
@@ -190,6 +189,7 @@ Here, the deep learning model, XGboost + TF-IDF and the Random Forest + TF-IDF m
 Therefore, it is necessary to create a classifier that is tailored to the scancode's needs i.e. being lightweight, more precise, etc. Existing projects do not provide any flexibility for this.
 
 ## File Purpose Classification Task:
+
 The files can be classified into the following categories:
 
  - Test files
@@ -199,6 +199,8 @@ The files can be classified into the following categories:
  - Example Scripts
  - Core Code
  - Others (to be discussed)
+
+Since many of the project structures are similar, one may think of adding an automatic file classifier.
  
 Each of the files belonging to any of the above category has certain characteristics associated with them, for example:
 
@@ -294,15 +296,15 @@ Therefore, we would only consider a prediction if the model is fairly confident 
 
 ## Dependencies:
 
-- scikit-learn (4.5 MB)
-- scipy (27 MB)
-- numpy (10 MB) 
+- Scikit-learn (4.5 MB)
+- SciPy (27 MB)
+- NumPy (10 MB)  *(optional)*
 
 All these packages are very actively maintained and all of them are easily and commonly installed via a single-shot command *'pip install sklearn'*. Python 3.x and 2.x are fully supported. 
 
 *Avoiding tensorflow/keras since they are huge in size and not very easy to install. This will definitely not fit well for the scancode package.*
 
-*If we still don't want to use any of the above mentioned dependencies, I can (and have) implement the above mentioned algorithms in pure python. see [this](https://towardsdatascience.com/tf-idf-for-document-ranking-from-scratch-in-python-on-real-world-dataset-796d339a4089) and [this](https://machinelearningmastery.com/implement-random-forest-scratch-python/)*
+*If we still don't want to use any of the above mentioned dependencies, I can (and have) implement the above mentioned algorithms in pure python. See [this](https://towardsdatascience.com/tf-idf-for-document-ranking-from-scratch-in-python-on-real-world-dataset-796d339a4089) and [this](https://machinelearningmastery.com/implement-random-forest-scratch-python/), although, this may take some additional time for me to study and to use the best practices*
 
 ## Tech Stack:
 
@@ -315,6 +317,8 @@ All these packages are very actively maintained and all of them are easily and c
 - Well documented performance of various machine learning models for future reference.
 - Best classifiers models for both the tasks.
 - Integration of the classifiers into the codebase as plugins.
+- Test cases covering each of the implemented feature
+- Documentation 
 
 # Timeline
 
@@ -364,7 +368,7 @@ as straightforward.
 - ## Technical Knowledge And Relevant Skills:
 
 	I am a sophomore pursuing Computer Engineering at Thapar Institute, Patiala. My specialization is in the field of Machine Learning and Back-end Web/API Development. 
-	I have done an internship in a company named *Hustlerpad Tech* for developing production ready back-end API. Most of the knowledge I have gained through is by reading quality books. I have been doing machine learning since past 2 years and am able to solve real-life problems using machine learning using the experience gained over time. 
+	I have done an internship in a company named *Hustlerpad Tech* for developing production ready back-end API (Certificate on my [LinkedIn](https://www.linkedin.com/in/mankaran32/)). Most of the knowledge I have gained through is by reading quality books. I have been doing machine learning since past 2 years and am able to solve real-life problems using machine learning using the experience gained over time. 
 
 	Some of my Machine Learning Projects are:
 	- Gesture replicating Robotic Arm using Deep Learning Approach.
@@ -373,7 +377,7 @@ as straightforward.
 	- Secured good rank in some machine learning competitions.
 	- Image compression using Deep Learning Techniques
 	- Generative Deep Learning 
-	- Currently leading my University Self Driving Car project.
+	- Currently leading my University Self Driving Car project started by Developer Student Club, Patiala.
 
 	In all these years, the most valuable skill i have gained is to develop solutions and solve problems of machine learning on my own even if very less resources are available on the internet using the experience gained over the time.
 
